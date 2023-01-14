@@ -28,6 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Edit(_ref) {
   let {
     attributes,
@@ -45,7 +46,13 @@ function Edit(_ref) {
       text_color: hexColor
     });
   };
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)(), attributes.message && !isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  const onChangeTextField = text_val => {
+    setAttributes({
+      text_field: text_val
+    });
+  };
+  const [alignment, setAlignment] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('center center');
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)(), console.log(attributes), attributes.message && !isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     style: {
       backgroundColor: attributes.bg_color,
       color: attributes.text_color
@@ -59,11 +66,20 @@ function Edit(_ref) {
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Background color', 'blp-filters')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.ColorPalette // Element Tag for Gutenberg standard colour selector
   , {
     onChange: onChangeBGColor // onChange event callback
+    ,
+    value: attributes.bg_color
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("fieldset", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("legend", {
     className: "blocks-base-control__label"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Text color', 'blp-filters')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.ColorPalette // Element Tag for Gutenberg standard colour selector
   , {
     onChange: onChangeTextColor // onChange event callback
+    ,
+    value: attributes.text_color
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("fieldset", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("legend", {
+    className: "blocks-base-control__label"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Text color', 'blp-filters')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    onChange: onChangeTextField,
+    value: attributes.text_field
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, blockProps, {
     value: attributes.message,
     onChange: val => setAttributes({
@@ -297,7 +313,7 @@ function _extends() {
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/blp-filters","version":"0.1.0","title":"Blp Filters","category":"text","icon":"flag","description":"A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.","attributes":{"message":{"type":"string","source":"text","selector":"div"},"bg_color":{"type":"string","default":"#000000"},"text_color":{"type":"string","default":"#ffffff"}},"supports":{"html":false},"textdomain":"blp-filters","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/blp-filters","version":"0.1.0","title":"Blp Filters","category":"text","icon":"flag","description":"A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.","attributes":{"message":{"type":"string","source":"text","selector":"div"},"bg_color":{"type":"string","default":"#000000"},"text_color":{"type":"string","default":"#ffffff"},"text_field":{"type":"string","default":"TEXT"}},"supports":{"html":false},"textdomain":"blp-filters","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

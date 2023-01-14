@@ -20,6 +20,10 @@
     "text_color": {
       "type": "string",
       "default": "#ffffff"
+    },
+    "text_field": {
+      "type": "string",
+      "default": "TEXT"
     }
   },
   "supports": {

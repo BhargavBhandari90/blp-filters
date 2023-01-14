@@ -14,7 +14,8 @@
 			"selector": "div"
 		},
 		"bg_color": { "type": "string", "default": "#000000" },
-		"text_color": { "type": "string", "default": "#ffffff" }
+		"text_color": { "type": "string", "default": "#ffffff" },
+		"text_field": { "type": "string", "default": "TEXT" }
 	},
 	"supports": {
 		"html": false
